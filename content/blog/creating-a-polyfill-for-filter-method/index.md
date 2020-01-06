@@ -1,6 +1,6 @@
 ---
 title: Creating a polyfill for filter method
-date: "2020-01-03"
+date: "2020-01-06"
 type: mini-article
 description: Learn how to write a custom polyfill for filter method
 ---
