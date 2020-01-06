@@ -9,7 +9,7 @@ What is a `filter` method used for? It loops through an array of items and retur
 
 ```javascript
 let nums = [1,2,3,4];
-let squares = nums.filter(val => val > 2); // [3,4]
+let filterItems = nums.filter(val => val > 2); // [3,4]
 ```
 
 Now, how do I build a custom filter function to do this same activity. Use `Array.prototype.methodName` to create a extension method for array.
