@@ -58,17 +58,18 @@ module.exports = {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: `UA-90533163-3`,
+        respectDNT: false,
       },
     },
     `gatsby-plugin-feed`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `TS;PR`,
+        short_name: `TS;PR`,
         start_url: `/`,
-        background_color: `#ffffff`,
-        theme_color: `#663399`,
+        background_color: `#5be0e5`,
+        theme_color: `#5be0e5`,
         display: `minimal-ui`,
         icon: `content/assets/gatsby-icon.png`,
       },
