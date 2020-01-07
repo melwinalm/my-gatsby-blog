@@ -5,7 +5,7 @@ import { rhythm, scale } from "../utils/typography"
 
 class Layout extends React.Component {
   render() {
-    const { location, title, children } = this.props
+    const { location, title, description, children } = this.props
     const rootPath = `${__PATH_PREFIX__}/`
     let header
 
@@ -26,7 +26,7 @@ class Layout extends React.Component {
             }}
             to={`/`}
           >
-            {title}
+            <span title={description}>{title}</span>
           </Link>
         </h1>
       )
