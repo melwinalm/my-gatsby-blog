@@ -30,7 +30,7 @@ public void Rotate(int[] nums, int k) {
 
 In this approach, you could use a stack, queue or a new array. Following code uses the Queue data structure. Start queueing elements from (n-k) till the end of the array. Then enqueue starting from 0 to n-k-1. The resulting queue will have the data rotated k times. Dequeue all the elements into the original array.
 
-#### This approach will fail when the k is greater or equal to n. Setting the k value to k mod n will fix that. This is because rotating k times is same as rotating k mod n times.
+##### This approach will fail when the k is greater or equal to n. Setting the k value to k mod n will fix that. This is because rotating k times is same as rotating k mod n times.
 
 ```csharp
 public void Rotate(int[] nums, int k) {
