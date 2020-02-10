@@ -6,7 +6,7 @@ description: Container With Most Water
 tags: csharp
 ---
 
-Note: This problem was taken from LeetCode - [Remove Nth Node From End of List](https://leetcode.com/problems/container-with-most-water/)
+Note: This problem was taken from LeetCode - [Container With Most Water](https://leetcode.com/problems/container-with-most-water/)
 
 ### Brute Force Method
 
