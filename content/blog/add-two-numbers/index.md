@@ -6,7 +6,7 @@ description: Add Two Numbers
 tags: csharp
 ---
 
-Note: This problem was taken from LeetCode - [Add Two Numbers](https://leetcode.com/problems/valid-parentheses/)
+Note: This problem was taken from LeetCode - [Add Two Numbers](https://leetcode.com/problems/add-two-numbers/)
 
 ### Basic Approach
 
