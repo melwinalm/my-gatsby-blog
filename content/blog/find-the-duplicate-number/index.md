@@ -1,6 +1,6 @@
 ---
 title: Find the Duplicate Number
-date: "2020-01-28"
+date: "2020-01-29"
 type: problem-solving
 description: Find the Duplicate Number
 tags: csharp
