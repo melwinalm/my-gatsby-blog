@@ -30,13 +30,13 @@ public static int FindAngle(string time){
     int hour = Int32.Parse(formattedTime[0]) % 12;
     int min = Int32.Parse(formattedTime[1]) % 60;
 
-    int hourDegrees = (int)((hour * 30) + (min * 0.5));
-    int minDegrees = min * 6;
+    double hourDegrees = ((hour * 30) + (min * 0.5));
+    double minDegrees = min * 6;
 
-    int angle = Math.Abs(hourDegrees - minDegrees);
+    double angle = Math.Abs(hourDegrees - minDegrees);
 
     if(angle > 180){
-      return 360 - angle;
+        return 360 - angle;
     }
     return angle;
 }
