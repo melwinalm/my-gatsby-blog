@@ -8,7 +8,7 @@ tags: csharp
 
 Note: This problem was taken from Daily Coding Problem #303
 
-#### Problem Statement
+### Problem Statement
 
 Given a clock time in `hh:mm` format, determine, to the nearest degree, the angle between the hour and the minute hands.
 
