@@ -1,6 +1,6 @@
 ---
 title: Rotate Image
-date: "2020-02-3"
+date: "2020-02-03"
 type: problem-solving
 description: Rotate Image
 tags: csharp
