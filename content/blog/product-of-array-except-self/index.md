@@ -68,4 +68,4 @@ public int[] ProductExceptSelf(int[] nums) {
     }
 ```
 
-Even this solution has line time and space complexity. The only difference between this and the previous approach is that this method doesn't use additional space to store two different arrays.
+Even this solution has linear time and space complexity. The only difference between this and the previous approach is that this method doesn't use additional space to store two different arrays.
