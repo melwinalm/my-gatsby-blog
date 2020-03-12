@@ -8,7 +8,7 @@ tags: csharp
 
 Note: This problem was taken from LeetCode - [All Elements in Two Binary Search Trees](https://leetcode.com/problems/all-elements-in-two-binary-search-trees/)
 
-### Naive Approach
+### Using Queue
 
 Perform In Order traversal on both the BST's and add it to Queue. Now dequeue the values from both the Queues based on the values and push it to a new list.
 
@@ -52,3 +52,7 @@ public void InOrderTraversal(TreeNode root, Queue<int> output){
     this.InOrderTraversal(root.right, output);
 }
 ```
+
+### Using Stack
+
+Better space complexity can be achieved using Stack data structure.
