@@ -24,7 +24,7 @@ public int FindKthLargest(int[] nums, int k) {
 
 Enqueue all the items in the array to a Priority Queue. Now, dequeue items from the priority queue `K` number of times to get the desired result. 
 
-##### Note: Priority Queue implementation can be found [here](priority-queue-implementation/)
+##### Note: Priority Queue implementation can be found [here](/priority-queue-implementation/)
 
 ```csharp
 public int FindKthLargest(int[] nums, int k) {
