@@ -1,6 +1,6 @@
 ---
 title: Find Largest Value in Each Tree Row
-date: "2020-04-1"
+date: "2020-04-01"
 type: problem-solving
 description: Find Largest Value in Each Tree Row
 tags: csharp
