@@ -12,7 +12,7 @@ Note: This problem was taken from LeetCode - [Last Stone Weight](https://leetcod
 
 At first, enqueue all the stone weights into a Priority Queue. Now dequeue twice from the queue (which will return the top two weights from the queue). Find the difference between the two dequeued items and put it back to the queue. If the difference is zero, then it means the weights cancelled each other and that need not be enqueued. Keep iterating on this until the queue count goes below two. Now if the queue has zero items, then it means that all the stones cancelled each other and the result is zero. If not then dequeue the last element from the queue to get the required result.
 
-##### Note: Priority Queue implementation can be found [here](priority-queue-implementation/)
+##### Note: Priority Queue implementation can be found [here](/priority-queue-implementation/)
 
 ```csharp
 public int LastStoneWeight(int[] stones) {
