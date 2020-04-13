@@ -2,7 +2,7 @@
 title: Common System Design Interview Questions
 date: "2020-04-13"
 type: interview-questions
-description: Microsoft Interview Questions
+description: Common System Design Interview Questions
 tags: interview, problem solving, questions
 ---
 
