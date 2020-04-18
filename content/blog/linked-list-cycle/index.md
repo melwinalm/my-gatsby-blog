@@ -8,29 +8,55 @@ tags: csharp
 
 Note: This problem was taken from LeetCode - [Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/)
 
-### Two Pointer Approach (Rabbit & HAre Method)
 
-Initialize two pointers slow and fast and point them to head of the linked list. Move the slow pointer by one step and fast pointer by two steps. If the next points to null then it is not a cyclic linked list. If the fast and slow pointer refers to the same node at one point in time then it means there is a cycle.
+### Using HashSet
+
+Recursively add the nodes into a HashSet. But before adding it to the HashSet check if that node already exists in the HashSet. If it already exists then it infers that the given list has a cycle.
 
 ```csharp
 public bool HasCycle(ListNode head) {
-    // Edge case to check if the head is null
-    if(head == null){
-        return false;
-    }
-      
-    ListNode slow = head;
-    ListNode fast = head;
-    
-    while(fast.next != null && fast.next.next != null){
-        slow = slow.next;
-        fast = fast.next.next;
-        if(slow == fast){
-            return true;
-        }
-    }
-    return false;
+	if(head == null){
+		return false;
+	}
+	
+	HashSet<ListNode> temp = new HashSet<ListNode>();
+	
+	while(head != null){
+		if(temp.Contains(head)){
+			return true;
+		}
+		else{
+			temp.Add(head);
+		}
+		head = head.next;
+	}
+	
+	return false;
 }
 ```
 
-This solution has a time complexity of O(n) and space complexity of O(1).
+### Using Fast and Slow Pointer
+
+Use two pointers. One pointer jumps one node at a time and the other jumps two nodes at a time. If both the pointers intersect at any point in time then it means that it has a cycle.
+
+```csharp
+public bool HasCycle(ListNode head) {
+	if(head == null){
+		return false;
+	}
+	
+	ListNode fast = head;
+	ListNode slow = head;
+	
+	while(fast != null && fast.next != null){
+		slow = slow.next;
+		fast = fast.next.next;
+		
+		if(fast == slow){
+			return true;
+		}
+	}
+	
+	return false;
+}
+```
