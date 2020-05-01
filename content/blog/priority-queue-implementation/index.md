@@ -217,8 +217,8 @@ queue.Enqueue(5);
 queue.Enqueue(3);
 queue.Enqueue(12);
 queue.Enqueue(1);
-queue.Dequueue(); // 15
-queue.Dequueue(); // 5
-queue.Dequueue(); // 3
-queue.Dequueue(); // 1
+queue.Dequeue(); // 15
+queue.Dequeue(); // 5
+queue.Dequeue(); // 3
+queue.Dequeue(); // 1
 ```
