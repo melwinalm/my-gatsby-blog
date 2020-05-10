@@ -1,8 +1,8 @@
 ---
-title: Implement Priority Queue
+title: Implement Priority Queue (Max Heap)
 date: "2020-03-30"
 type: problem-solving
-description: Implement Priority Queue
+description: Implement Priority Queue (Max Heap)
 tags: csharp
 ---
 
@@ -222,3 +222,7 @@ queue.Dequeue(); // 5
 queue.Dequeue(); // 3
 queue.Dequeue(); // 1
 ```
+
+### Additional Notes
+
+Read (this)[/priority-queue-implementation/] article for generic implementation of Priority Queue
