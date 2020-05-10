@@ -42,28 +42,29 @@ We need not traverse the whole tree to get the result. Just traverse through k n
 This approach is similar to the previous one, except that we need two reference variables `count` and `output`. Increment the `count` variable on each traversal and whenever the `count` matches the value `k`, set the value of that node to the `output` variable and return.
 
 ```csharp
-public int KthSmallest(TreeNode root, int k) {        
+public int KthSmallest(TreeNode root, int k) {
+    int ans = 0;
     int count = 0;
-    int output = 0;
-    
-    this.InOrderTraversal(root, ref count, ref output, k);
-    return output;
+
+    this.KthSmallest(root, k, ref ans, ref count);
+
+    return ans;
 }
 
-public void InOrderTraversal(TreeNode root, ref int count, ref int output, int k){    
-    if(root.left != null){
-        this.InOrderTraversal(root.left, ref count, ref output, k);
-    }
-    
-    count++;
-    if(count == k){
-        output = root.val;
+public void KthSmallest(TreeNode root, int k, ref int ans, ref int count){
+    if(root == null){
         return;
     }
-    
-    if(root.right != null){
-        this.InOrderTraversal(root.right, ref count, ref output, k);
+
+    this.KthSmallest(root.left, k, ref ans, ref count);
+
+    count++;
+    if(k == count){
+        ans = root.val;
+        return;
     }
+
+    this.KthSmallest(root.right, k, ref ans, ref count);
 }
 ```
 
