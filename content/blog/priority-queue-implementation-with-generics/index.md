@@ -1,12 +1,12 @@
 ---
-title: Implement Priority Queue with Generics
+title: Implement Priority Queue with Generics (Max Heap)
 date: "2020-05-01"
 type: problem-solving
-description: Implement Priority Queue with Generics
+description: Implement Priority Queue with Generics (Max Heap)
 tags: csharp
 ---
 
-This article only has the code to the generic implementation of the Priority Queue. Read this article [here](/priority-queue-implementation/) which explains how the priority queue is implemented from the ground up.
+This article only has the code to the generic implementation of the Priority Queue using Max Heap. Read this article [here](/priority-queue-implementation/) which explains how the priority queue is implemented from the ground up.
 
 ```csharp
 public class KeyValuePair<T>
@@ -122,4 +122,49 @@ queue.Dequeue(); // xyz
 queue.Dequeue(); // a
 queue.Dequeue(); // abcd
 queue.Dequeue(); // q
+```
+
+### Additional Notes
+
+The above implemenation is using Max Heap. For Min heap implementation following are the functions that will have to be changed.
+
+#### MinHeapify
+
+```csharp
+private void MinHeapify(int i)
+{
+	int left = this.LeftChild(i);
+	int right = this.RightChild(i);
+
+	int lowest = i;
+
+	if (left <= heapSize && queue[lowest].Key > queue[left].Key)
+	{
+		lowest = left;
+	}
+
+	if (right <= heapSize && queue[lowest].Key > queue[right].Key)
+	{
+		lowest = right;
+	}
+
+	if (lowest != i)
+	{
+		this.Swap(lowest, i);
+		this.MinHeapify(lowest);
+	}
+}
+```
+
+#### Build Min Heap
+
+```csharp
+private void BuildMinHeap(int i)
+{
+	while (i >= 0 && queue[(i - 1) / 2].Key > queue[i].Key)
+	{
+		this.Swap(i, (i - 1) / 2);
+		i = (i - 1) / 2;
+	}
+}
 ```
