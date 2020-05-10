@@ -225,4 +225,4 @@ queue.Dequeue(); // 1
 
 ### Additional Notes
 
-Read (this)[/priority-queue-implementation/] article for generic implementation of Priority Queue
+Read [this](/priority-queue-implementation/) article for generic implementation of Priority Queue
