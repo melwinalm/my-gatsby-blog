@@ -47,30 +47,20 @@ A min and max value integer is maintained for each node. Check if left and right
 
 ```csharp
 public bool IsValidBST(TreeNode root) {
-      return this.ValidateBST(root, long.MinValue, long.MaxValue);
-  }
-  
-  public bool ValidateBST(TreeNode node, long low, long high){
-      if(node == null){
-          return true;
-      }
-      
-      if(low != null && node.val <= low){
-          return false;
-      }
-      if(high != null && node.val >= high){
-          return false;
-      }
-      
-      if(!this.ValidateBST(node.left, low, node.val)){
-          return false;
-      }
-      if(!this.ValidateBST(node.right, node.val, high)){
-          return false;
-      }
-          
-      return true;
-  }
+    return ValidBST(root, long.MinValue, long.MaxValue);
+}
+
+public bool ValidBST(TreeNode root, long minValue, long maxValue){
+    if(root == null){
+        return true;
+    }
+
+    if(root.val > minValue && root.val < maxValue){
+        return this.ValidBST(root.left, minValue, root.val) && this.ValidBST(root.right, root.val, maxValue);
+    }
+
+    return false;
+}
 ```
 
 ### Using Iteration
