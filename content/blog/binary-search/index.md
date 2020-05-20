@@ -6,7 +6,7 @@ description: Binary Search
 tags: csharp
 ---
 
-Note: This problem was taken from LeetCode - [Find First and Last Position of Element in Sorted Array](https://leetcode.com/problems/binary-search/)
+Note: This problem was taken from LeetCode - [Binary Search](https://leetcode.com/problems/binary-search/)
 
 ### Using Binary Search
 
