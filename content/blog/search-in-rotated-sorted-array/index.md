@@ -14,12 +14,14 @@ First find the index where the array starts i.e the smallest element in the arra
 
 ```csharp
 public int Search(int[] nums, int target) {
+	int n = nums.Length;
+	
+	// Find min element
 	int low = 0;
-	int high = nums.Length - 1;
+	int high = n - 1;
 	
 	while(low < high){
-		int mid = (low + high)/2;
-		
+		int mid = low + ((high - low)/2);
 		if(nums[mid] > nums[high]){
 			low = mid + 1;
 		}
@@ -28,22 +30,23 @@ public int Search(int[] nums, int target) {
 		}
 	}
 	
-	int rot = low;
+	// Perform relative binary search
+	int startIndex = low;
 	low = 0;
-	high = nums.Length - 1;
+	high = n - 1;
 	
 	while(low <= high){
-		int mid = (low+high)/2;
-		int realMid = (rot + mid) % nums.Length;
+		int mid = low + ((high - low)/2);
+		int relativeMid = (mid + startIndex) % n;
 		
-		if(nums[realMid] == target){
-			return realMid;
+		if(nums[relativeMid] == target){
+			return relativeMid;
 		}
-		else if(nums[realMid] < target){
+		else if(nums[relativeMid] < target){
 			low = mid + 1;
 		}
 		else{
-			high = mid-1;
+			high = mid - 1;
 		}
 	}
 	
