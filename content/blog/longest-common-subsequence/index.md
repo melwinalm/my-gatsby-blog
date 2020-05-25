@@ -76,3 +76,30 @@ public int LongestCommonSubsequence(string text1, string text2) {
 	return dp[text1.Length, text2.Length];
     }
 ```
+
+### Bottom Up Approach (Space Optimised)
+
+```csharp
+public int LongestCommonSubsequence(string text1, string text2) {
+int a = text1.Length;
+int b = text2.Length;
+
+int[] dp = new int[b+1];
+
+for(int i = 1; i <= a; i++){
+    int prev = 0;
+    for(int j = 1; j <= b; j++){
+	int curr = dp[j];
+	if(text1[i-1] == text2[j-1]){
+	    dp[j] = 1 + prev;
+	}
+	else{
+	    dp[j] = Math.Max(dp[j], dp[j-1]);
+	}
+	prev = curr;                
+    }
+}
+
+return dp[b];
+}
+```
