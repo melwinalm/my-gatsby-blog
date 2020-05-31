@@ -8,7 +8,7 @@ tags: csharp
 
 Note: This problem was taken from LeetCode - [Check If a String Contains All Binary Codes of Size K](https://leetcode.com/problems/check-if-a-string-contains-all-binary-codes-of-size-k/)
 
-### Using DFS
+### Using Sliding Window
 
 ```csharp
 public bool HasAllCodes(string s, int k) {
