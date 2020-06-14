@@ -1,8 +1,8 @@
 ---
-title: Implement Priority Queue using Linked List (using Generics)
+title: Implement Stack using Linked List (using Generics)
 date: "2020-05-11"
 type: problem-solving
-description: Implement Priority Queue using Linked List (using Generics)
+description: Implement Stack using Linked List (using Generics)
 tags: csharp
 ---
 
