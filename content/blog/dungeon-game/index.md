@@ -8,6 +8,10 @@ tags: csharp
 
 Note: This problem was taken from LeetCode - [Dungeon Game](https://leetcode.com/problems/dungeon-game/)
 
+### Using Binary Search
+
+For the given problem, the health can range between the values 1 and 10^9. So performing binary search for this given range can give us the minimum health required to save the pricess. But this solution may not be optimum. Check the next solution which uses dynamic programming.
+
 ### Using Bottom Up Approach
 
 ```csharp
