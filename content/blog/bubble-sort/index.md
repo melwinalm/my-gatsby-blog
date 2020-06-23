@@ -1,8 +1,8 @@
 ---
-title: Bubble Sort
+title: Sorting Algorithm - Bubble Sort
 date: "2020-05-11"
 type: problem-solving
-description: Bubble Sort
+description: Selection Algorithm - Bubble Sort
 tags: csharp
 ---
 
