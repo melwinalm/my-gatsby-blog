@@ -1,6 +1,6 @@
 ---
 title: Sorting Algorithm - Selection Sort
-date: "2020-05-23"
+date: "2020-06-23"
 type: problem-solving
 description: Sorting Algorithm - Selection Sort
 tags: csharp
