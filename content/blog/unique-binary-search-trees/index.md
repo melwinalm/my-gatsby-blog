@@ -25,3 +25,7 @@ public int NumTrees(int n) {
 	return memo[n];
 }
 ```
+
+### Using Catalan Number
+
+Use this formula to get the result - (2n)!/((n+1)!*n!) 
