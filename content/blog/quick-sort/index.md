@@ -8,7 +8,7 @@ tags: csharp
 
 ### Problem Statement
 
-Sort integer array using Merge Sort
+Sort integer array using Quick Sort
 
 ### Solution
 
