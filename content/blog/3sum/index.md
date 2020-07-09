@@ -6,7 +6,7 @@ description: 3Sum
 tags: csharp
 ---
 
-Note: This problem was taken from LeetCode - [Island Perimeter](https://leetcode.com/problems/3sum/)
+Note: This problem was taken from LeetCode - [3Sum](https://leetcode.com/problems/3sum/)
 
 ### Using Sorting & Binary Search
 
