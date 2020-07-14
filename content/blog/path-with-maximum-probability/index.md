@@ -91,7 +91,7 @@ public void DFS(int start, int end, HashSet<int> visited,  Dictionary<int, List<
 }
 ```
 
-### Using BFS
+### Using BFS (Bellman-Ford Algorithm)
 
 ```csharp
 public class Solution {
