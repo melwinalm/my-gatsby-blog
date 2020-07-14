@@ -63,3 +63,61 @@ public void DFS(int start, int end, HashSet<int> visited,  Dictionary<int, List<
 	visited.Remove(start);
 }
 ```
+
+### Using BFS
+
+```csharp
+public class Solution {
+    public double MaxProbability(int n, int[][] edges, double[] succProb, int start, int end) {
+        Dictionary<int, List<Tuple<int, double>>> map = new Dictionary<int, List<Tuple<int, double>>>();
+        
+        for(int i = 0; i < n; i++){
+            map[i] = new List<Tuple<int, double>>();
+        }
+        
+        for(int i = 0; i < edges.Length; i++){
+            int a = edges[i][0];
+            int b = edges[i][1];
+            double succ = succProb[i];
+            
+            map[a].Add(new Tuple<int,double>(b,succ));
+            map[b].Add(new Tuple<int,double>(a,succ));
+        }        
+        
+        Queue<Node> bfsQueue = new Queue<Node>();
+        bfsQueue.Enqueue(new Node(start, 1.0));
+        
+        double[] probs = new double[n];
+        
+        while(bfsQueue.Count > 0){
+            Node tempNode = bfsQueue.Dequeue();
+            
+            int currNode = tempNode.node;
+            double currProb = tempNode.prob;
+            
+            foreach(Tuple<int, double> item in map[currNode]){
+                if(probs[item.Item1] >= currProb * item.Item2){
+                    continue;
+                }
+                
+                bfsQueue.Enqueue(new Node(item.Item1, currProb * item.Item2));
+                probs[item.Item1] = currProb * item.Item2;
+            }
+            
+        }
+       
+        
+        return probs[end];
+    }
+}
+
+public class Node{
+    public int node;
+    public double prob;
+    
+    public Node(int _node, double _prob){
+        node = _node;
+        prob = _prob;
+    }
+}
+```
