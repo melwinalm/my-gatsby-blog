@@ -8,6 +8,33 @@ tags: csharp
 
 Note: This problem was taken from LeetCode - [Path with Maximum Probability](https://leetcode.com/problems/path-with-maximum-probability/)
 
+### Using Floys-Warshall Algorithm (Time Limit Exceeded error)
+
+```csharp
+public double MaxProbability(int n, int[][] edges, double[] succProb, int start, int end) {
+	double[,] probs = new double[n,n];
+	
+	for(int i = 0; i < edges.Length; i++){
+		int a = edges[i][0];
+		int b = edges[i][1];
+		
+		probs[a,b] = succProb[i];
+		probs[b,a] = succProb[i];
+	}
+	
+	
+	for(int i = 0; i < n; i++){
+		for(int j = 0; j < n; j++){
+			for(int k = 0; k < n; k++){
+				probs[j,k] = Math.Max(probs[j,k], probs[j,i]*probs[i,k]);
+			}
+		}
+	}        
+	
+	return probs[start, end];
+}
+```
+
 ### Using DFS (Time Limit Exceeded error)
 
 ```csharp
@@ -121,3 +148,7 @@ public class Node{
     }
 }
 ```
+
+### Dijkstra's Algorithm
+
+To be written
