@@ -1,6 +1,6 @@
 ---
 title: Shuffle String
-date: "2020-07-23"
+date: "2020-07-26"
 type: problem-solving
 description: Shuffle String
 tags: csharp
