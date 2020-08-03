@@ -11,25 +11,25 @@ Note: This problem was taken from LeetCode - [Valid Palindrome](https://leetcode
 ### Using Two Pointer Technique
 ```csharp
 public bool IsPalindrome(string s) {
-	int sIndex = 0;
-	int eIndex = s.Length - 1;
+	int start = 0;
+	int end = s.Length - 1;
 	
-	while(sIndex < eIndex){
-		while(sIndex < eIndex && !Char.IsLetterOrDigit(s[sIndex])){
-			sIndex++;
+	while(start < end){
+		if(!char.IsLetterOrDigit(s[start])){
+			start++;
+			continue;
 		}
 		
-		while(sIndex < eIndex && !Char.IsLetterOrDigit(s[eIndex])){
-			eIndex--;
+		if(!char.IsLetterOrDigit(s[end])){
+			end--;
+			continue;
 		}
 		
-		if(sIndex < eIndex){
-			if(Char.ToLower(s[sIndex]) != Char.ToLower(s[eIndex])){
-				return false;
-			}
+		if(char.ToLower(s[start]) != char.ToLower(s[end])){
+			return false;
 		}
-		sIndex++;
-		eIndex--;
+		start++;
+		end--;
 	}
 	
 	return true;
