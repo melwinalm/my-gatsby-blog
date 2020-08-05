@@ -8,7 +8,7 @@ tags: csharp
 
 Note: This problem was taken from LeetCode - [Add and Search Word - Data structure design](https://leetcode.com/problems/add-and-search-word-data-structure-design/)
 
-### Using Tries
+### Using Depth First Approach
 
 ```csharp
 public class WordDictionary {
@@ -39,7 +39,6 @@ public class WordDictionary {
     
     private bool Search(string word, int currIndex, TrieNode temp){
         if(currIndex == word.Length){
-            Console.WriteLine(temp.val.ToString());
             return temp.val;
         }
         
@@ -66,6 +65,82 @@ public class TrieNode{
     public TrieNode(bool _val){
         this.val = _val;
         this.nodes = new TrieNode[27];
+    }
+}
+```
+
+### Using Breadth First Approach
+
+```csharp
+public class WordDictionary {
+
+    Trie root;
+    public WordDictionary() {
+        root = new Trie();
+    }
+
+    public void AddWord(string word) {
+        Trie tempNode = root;
+        foreach(char c in word){
+            int charValue = c - 'a';
+            
+            if(tempNode.child[charValue] == null){
+                tempNode.child[charValue] = new Trie();
+            }
+            tempNode = tempNode.child[charValue];
+        }
+        tempNode.isWord = true;
+    }
+
+    public bool Search(string word) {
+        Queue<Trie> bfsQueue = new Queue<Trie>();
+        bfsQueue.Enqueue(root);
+        
+        foreach(char c in word){
+            int count = bfsQueue.Count;
+            
+            if(c == '.'){
+                for(int i = 0; i < count; i++){
+                    Trie tempNode = bfsQueue.Dequeue();
+                    
+                    for(int j = 0; j < tempNode.child.Length; j++){
+                        if(tempNode.child[j] != null){
+                            bfsQueue.Enqueue(tempNode.child[j]);
+                        }
+                    }
+                    
+                }
+            }
+            else{
+                for(int i = 0; i < count; i++){
+                    int charValue = c - 'a';
+                    Trie tempNode = bfsQueue.Dequeue();
+                    
+                    if(tempNode.child[charValue] != null){
+                        bfsQueue.Enqueue(tempNode.child[charValue]);
+                    }
+                
+                }
+            }
+        }
+        
+        while(bfsQueue.Count > 0){
+            if(bfsQueue.Dequeue().isWord == true){
+                return true;
+            }
+        }
+        
+        return false;
+    }
+}
+
+public class Trie{
+    public Trie[] child;
+    public bool isWord;
+    
+    public Trie(){
+        child = new Trie[26];
+        isWord = false;
     }
 }
 ```
