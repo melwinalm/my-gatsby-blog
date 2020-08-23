@@ -1,8 +1,8 @@
 ---
-title: Minimum Number of Vertices to Reach All Nodes
+title: Minimum Number of Vertices to Reach All Nodes :star:
 date: "2020-08-23"
 type: problem-solving
-description: Minimum Number of Vertices to Reach All Nodes
+description: Minimum Number of Vertices to Reach All Nodes :star:
 tags: csharp
 ---
 
