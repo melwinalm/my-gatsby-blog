@@ -1,8 +1,8 @@
 ---
-title: Stream of Characters
+title: Stream of Characters #:star:
 date: "2020-08-24"
 type: problem-solving
-description: Stream of Characters
+description: Stream of Characters #:star:
 tags: csharp
 ---
 
