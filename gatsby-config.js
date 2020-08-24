@@ -47,6 +47,7 @@ module.exports = {
               noInlineHighlight: true,
             },
           },
+          `gatsby-remark-emoji-unicode`,
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
         ],
