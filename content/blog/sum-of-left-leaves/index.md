@@ -12,7 +12,10 @@ Note: This problem was taken from LeetCode - [Sum of Left Leaves](https://leetco
 
 ```csharp
 public int SumOfLeftLeaves(TreeNode root) {
-	int count = 0;
+	if(root == null){
+		return 0;
+	}
+	
 	return this.SumOfLeftLeaves(root, false);
 }
 
@@ -22,12 +25,7 @@ public int SumOfLeftLeaves(TreeNode root, bool isLeft){
 	}
 	
 	if(root.left == null && root.right == null){
-		if(isLeft){
-			return root.val;
-		}
-		else{
-			return 0;
-		}
+		return isLeft ? root.val : 0;
 	}
 	
 	return this.SumOfLeftLeaves(root.left, true) + this.SumOfLeftLeaves(root.right, false);
