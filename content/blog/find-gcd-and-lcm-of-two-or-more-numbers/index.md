@@ -12,10 +12,10 @@ GCD is also called as HCF (Highest Common Factor). It's the largest number that 
 
 ```csharp
 public int GCD(int a, int b){
-    if (a == 0){
-      return b;
+    if (b == 0){
+      return a;
     }
-    this.GCD(b, a % b);
+    return this.GCD(b, a % b);
 }
 ```
 
