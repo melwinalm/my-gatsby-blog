@@ -6,7 +6,7 @@ description: Split Linked List in Parts
 tags: csharp
 ---
 
-Note: This problem was taken from LeetCode - [Construct K Palindrome Strings](https://leetcode.com/problems/split-linked-list-in-parts/)
+Note: This problem was taken from LeetCode - [Split Linked List in Parts](https://leetcode.com/problems/split-linked-list-in-parts/)
 
 ```csharp
 public ListNode[] SplitListToParts(ListNode root, int k) {
