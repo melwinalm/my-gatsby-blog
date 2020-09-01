@@ -24,7 +24,8 @@ public class NumArray {
             this.BuildSegmentTree(nums);
         }
     }
-
+    
+    // O(n) time complexity
     private void BuildSegmentTree(int[] nums){
         for(int i = 0, j = n; j < 2*n; i++, j++){
             tree[j] = nums[i];
@@ -35,6 +36,7 @@ public class NumArray {
         }
     }
     
+    // O(log N) time complexity
     public void Update(int i, int val) {
         int pos = i + n;
         tree[pos] = val;
@@ -53,9 +55,9 @@ public class NumArray {
             tree[pos/2] = tree[left] + tree[right];
             pos /= 2;
         }
-        
     }
     
+    // O(log N) time complexity
     public int SumRange(int i, int j) {
         int l = i + n;
         int r = j + n;
