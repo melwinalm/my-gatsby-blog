@@ -8,8 +8,6 @@ tags: csharp
 
 Note: This problem was taken from LeetCode - [Excel Sheet Column Title](https://leetcode.com/problems/excel-sheet-column-title/)
 
-### Using Trie
-
 ```csharp
 public string ConvertToTitle(int n) {
 	string output = "";
