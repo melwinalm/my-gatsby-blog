@@ -10,8 +10,6 @@ Note: This problem was taken from LeetCode - [Max Consecutive Ones III](https://
 
 ### Using Two Pointer or Sliding Window Approach
 
-```minCost += (group sum of repeated characters) - (max number in that group)```
-
 ```csharp
 public int LongestOnes(int[] A, int K) {
 	int n = A.Length;
