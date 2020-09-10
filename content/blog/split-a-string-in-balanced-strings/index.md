@@ -14,23 +14,20 @@ Note: This problem was taken from LeetCode - [Split a String in Balanced Strings
 public int BalancedStringSplit(string s) {
 	int count = 0;
 	
-	int lCount = 0;
-	int rCount = 0;
+	int balance = 0;
 	
-	for(int i = 0; i < s.Length; i++){
-		if(s[i] == 'L'){
-			lCount += 1;
+	foreach(char c in s){
+		if(c == 'R'){
+			balance++;
 		}
-		else{
-			rCount += 1;
+		else if(c == 'L'){
+			balance--;
 		}
 		
-		
-		if(lCount == rCount){
+		if(balance == 0){
 			count++;
-			lCount = 0;
-			rCount = 0;
 		}
+		
 	}
 	
 	return count;
