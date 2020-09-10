@@ -123,3 +123,65 @@ public int FindCheapestPrice(int n, int[][] flights, int src, int dst, int K) {
 	return minCost == Int32.MaxValue ? -1 : minCost;        
 }
 ```
+
+### Using Bellman-Ford Algorithm
+
+```csharp
+public class Solution {
+    public int FindCheapestPrice(int n, int[][] flights, int src, int dst, int K) {
+        Dictionary<int, List<Tuple<int,int>>> graph = new Dictionary<int, List<Tuple<int,int>>>();
+        
+        for(int i = 0; i < n; i++){
+            graph[i] = new List<Tuple<int,int>>();
+        }
+        
+        foreach(int[] edge in flights){
+            int f = edge[0];
+            int t = edge[1];
+            int w = edge[2];
+            
+            graph[f].Add(new Tuple<int,int>(t, w));
+        }
+        
+        Queue<Node> bfsQueue = new Queue<Node>();
+        bfsQueue.Enqueue(new Node(src, 0, 0));
+        
+        int[] dist = new int[n];
+        Array.Fill(dist, 1000000);
+        
+        dist[src] = 0;
+        
+        while(bfsQueue.Count > 0){
+            Node tempNode = bfsQueue.Dequeue();
+            int currNode = tempNode.node;
+            int currWeight = tempNode.weight;
+            int currStops = tempNode.stops;
+            
+            foreach(var edge in graph[currNode]){
+                int toNode = edge.Item1;
+                int toWeight = edge.Item2;
+                
+                if(dist[toNode] > currWeight + toWeight && currStops <= K){
+                    dist[toNode] = currWeight + toWeight;
+                    bfsQueue.Enqueue(new Node(toNode, dist[toNode], currStops + 1));
+                }
+                
+            }
+        }
+        
+        return dist[dst] != 1000000 ? dist[dst] : -1;
+    }
+}
+
+public class Node{
+    public int node;
+    public int weight;
+    public int stops;
+    
+    public Node(int node, int weight, int stops){
+        this.node = node;
+        this.weight = weight;
+        this.stops = stops;
+    }
+}
+```
