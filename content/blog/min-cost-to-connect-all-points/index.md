@@ -50,8 +50,7 @@ public class Solution {
     
     public int MinCost(int[][] points, int i, int j){
         int min = Math.Abs(points[i][0] - points[j][0]) + Math.Abs(points[i][1] - points[j][1]);
-        
-        
+  	
         return min;
     }
 }
