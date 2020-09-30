@@ -112,3 +112,35 @@ public class IntervalSort: IComparer<int[]>{
 	}
 }
 ```
+
+### Clean Solution
+
+```csharp
+public int[][] Merge(int[][] intervals) {
+	if(intervals.Length == 0){
+		return intervals;
+	}
+	
+	Array.Sort(intervals, (a,b) => a[0] - b[0]);
+
+	List<int[]> result = new List<int[]>();
+	
+	int[] past = intervals[0];
+	
+	for(int i = 1; i < intervals.Length; i++){
+		int[] curr = intervals[i];
+		
+		if(curr[0] <= past[1]){
+			past[1] = Math.Max(curr[1], past[1]);
+		}
+		else{
+			result.Add(past);
+			past = curr;
+		}
+	}
+	
+	result.Add(past);
+	
+	return result.ToArray();
+}
+```
