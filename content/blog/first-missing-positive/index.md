@@ -1,6 +1,6 @@
 ---
 title: First Missing Positive
-date: "2020-09-01"
+date: "2020-10-01"
 type: problem-solving
 description: First Missing Positive
 tags: csharp
