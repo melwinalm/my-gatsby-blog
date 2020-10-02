@@ -1,6 +1,6 @@
 ---
 title: Combination Sum
-date: "2020-09-02"
+date: "2020-10-02"
 type: problem-solving
 description: Combination Sum
 tags: csharp
