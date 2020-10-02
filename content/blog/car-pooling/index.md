@@ -6,7 +6,7 @@ description: Car Pooling
 tags: csharp
 ---
 
-Note: This problem was taken from LeetCode - (Car Pooling)[https://leetcode.com/problems/car-pooling/)
+Note: This problem was taken from LeetCode - [Car Pooling](https://leetcode.com/problems/car-pooling/)
 
 ### Using Prefix Sum
 
