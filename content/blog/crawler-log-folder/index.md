@@ -1,6 +1,6 @@
 ---
 title: Crawler Log Folder
-date: "2020-08-27"
+date: "2020-10-27"
 type: problem-solving
 description: Crawler Log Folder
 tags: csharp
