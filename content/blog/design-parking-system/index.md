@@ -8,7 +8,7 @@ tags: csharp
 
 Note: This problem was taken from LeetCode - [Design Parking System](https://leetcode.com/problems/design-parking-system/)
 
-### Top Down Approach (Time Limit Exceeded)
+### Naive Approach
 
 ```csharp
 public class ParkingSystem {
