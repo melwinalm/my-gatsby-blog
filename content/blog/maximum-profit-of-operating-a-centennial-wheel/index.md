@@ -1,6 +1,6 @@
 ---
 title: Maximum Profit of Operating a Centennial Wheel
-date: "2020-10-27"
+date: "2020-09-27"
 type: problem-solving
 description: Maximum Profit of Operating a Centennial Wheel
 tags: csharp
