@@ -8,7 +8,7 @@ tags: csharp
 
 Note: This problem was taken from LeetCode - [Sort List](https://leetcode.com/problems/sort-list/)
 
-### Linear Time, Constant Space
+### Using Merge Sort
 
 ```csharp
 public ListNode SortList(ListNode head) {
