@@ -116,34 +116,32 @@ public int MaximalSquare(char[][] matrix, int row, int col, int[,] memo){
 
 ```csharp
 public int MaximalSquare(char[][] matrix) {
-	int row = matrix.Length;
+	int rows = matrix.Length;
 	
-	if(row == 0){
+	if(rows == 0){
 		return 0;
 	}
 	
-	int col = matrix[0].Length;
+	int cols = matrix[0].Length;
 	
-	int max = 0;
+	int[,] dp = new int[rows,cols];
 	
-	int[,] dp = new int[row + 1,col + 1];
+	int maxSoFar = 0;
 	
-	for(int i = 1; i <= row; i++){
-		for(int j = 1; j <= col; j++){
-			if(matrix[i-1][j-1] == '1'){
-				dp[i,j] = 1 + Math.Min(
-					dp[i-1,j],
-					Math.Min(
-						dp[i-1,j-1],
-						dp[i,j-1]
-					)
-				);
-									
-				max = Math.Max(max, dp[i,j]);
+	for(int i = 0; i < rows; i++){
+		for(int j = 0; j < cols; j++){
+			
+			if(i == 0 || j == 0){
+				dp[i,j] = matrix[i][j] == '1' ? 1 : 0;
 			}
+			else if(matrix[i][j] == '1'){
+				dp[i,j] = 1 + Math.Min(Math.Min(dp[i,j-1], dp[i-1,j]), dp[i-1,j-1]);
+			}
+			
+			maxSoFar = Math.Max(maxSoFar, dp[i,j]);
 		}
 	}
 	
-	return max * max;
+	return maxSoFar * maxSoFar;   
 }
 ```
