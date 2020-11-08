@@ -29,3 +29,30 @@ public bool Find132pattern(int[] nums) {
 	return false;
 }
 ```
+
+### Using Stack
+
+```csharp
+public bool Find132pattern(int[] nums) {
+	if(nums.Length < 3){
+		return false;
+	}
+	
+	int a3 = Int32.MinValue;
+	Stack<int> stack = new Stack<int>();
+	
+	for(int i = nums.Length - 1; i >= 0; i--){
+		if(nums[i] < a3){
+			return true;
+		}
+		else{
+			while(stack.Count > 0 && nums[i] > stack.Peek()){
+				a3 = stack.Pop();
+			}
+		}
+		stack.Push(nums[i]);
+	}
+	
+	return false;
+}
+```
