@@ -8,6 +8,20 @@ tags: csharp
 
 Note: This problem was taken from LeetCode - [Squares of a Sorted Array](https://leetcode.com/problems/squares-of-a-sorted-array/)
 
+### Naive Approach
+
+```csharp
+public int[] SortedSquares(int[] nums) {
+	for(int i = 0; i < nums.Length; i++){
+		nums[i] *= nums[i];
+	}
+	
+	Array.Sort(nums);
+	
+	return nums;
+}
+```
+
 ### Using Two Pointer Approach
 
 ```csharp
