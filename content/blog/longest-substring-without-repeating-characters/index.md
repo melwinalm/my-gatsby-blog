@@ -45,3 +45,34 @@ public int LengthOfLongestSubstring(string s) {
 	return count;
 }
 ```
+
+```js
+var lengthOfLongestSubstring = function(s) {
+    let N = s.length;
+    
+    if(N < 2){
+        return N;
+    }
+    
+    let sIndex = 0;
+    let eIndex = 0;
+
+    let set = new Set();
+    
+    let output = 0;
+    
+    while(sIndex < N && eIndex < N){
+        if(set.has(s[eIndex])){
+            set.delete(s[sIndex]);
+            sIndex++;
+        }
+        else{
+            set.add(s[eIndex]);
+            output = Math.max(output, set.size);
+            eIndex++;
+        }
+    }
+    
+    return output;
+};
+```
